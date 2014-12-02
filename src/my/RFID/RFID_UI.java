@@ -5,6 +5,7 @@
  */
 
 package my.RFID;
+import com.thingmagic.*;
 
 /**
  *
@@ -28,21 +29,404 @@ public class RFID_UI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        ReservedButton = new javax.swing.JButton();
+        EPCButton = new javax.swing.JButton();
+        TIDButton = new javax.swing.JButton();
+        UserButton = new javax.swing.JButton();
+        ReservedField = new javax.swing.JTextField();
+        EPCField = new javax.swing.JTextField();
+        TIDField = new javax.swing.JTextField();
+        UserField = new javax.swing.JTextField();
+        ReadButton = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        WriteButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        WriteField = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        COMButton = new javax.swing.JButton();
+        BaudButton = new javax.swing.JButton();
+        DisconnectButton = new javax.swing.JButton();
+        ExitButton = new javax.swing.JButton();
+        ClearButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Read Memory Bank"));
+
+        jLabel1.setText("Select the memory bank you would like to read.");
+
+        ReservedButton.setText("Reserved");
+        ReservedButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReservedButtonActionPerformed(evt);
+            }
+        });
+
+        EPCButton.setText("EPC");
+        EPCButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EPCButtonActionPerformed(evt);
+            }
+        });
+
+        TIDButton.setText("TID");
+        TIDButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TIDButtonActionPerformed(evt);
+            }
+        });
+
+        UserButton.setText("User");
+        UserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserButtonActionPerformed(evt);
+            }
+        });
+
+        EPCField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EPCFieldActionPerformed(evt);
+            }
+        });
+
+        ReadButton.setText("Read");
+        ReadButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReadButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(TIDButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(EPCButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ReservedButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(UserButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(EPCField, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+                                    .addComponent(TIDField)
+                                    .addComponent(ReservedField)
+                                    .addComponent(UserField))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(ReadButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ReservedButton)
+                    .addComponent(ReservedField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EPCButton)
+                    .addComponent(EPCField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TIDButton)
+                    .addComponent(TIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UserButton)
+                    .addComponent(UserField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ReadButton))
+        );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Write EPC"));
+
+        WriteButton.setText("Write");
+        WriteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WriteButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Enter the data you would like writen to the tag.");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(WriteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(WriteField)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addGap(9, 9, 9)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(WriteButton)
+                    .addComponent(WriteField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Settings"));
+
+        COMButton.setText("Detect COM Port");
+        COMButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                COMButtonActionPerformed(evt);
+            }
+        });
+
+        BaudButton.setText("Set Baud Rate");
+
+        DisconnectButton.setText("Disconnect");
+
+        ExitButton.setText("Exit");
+
+        ClearButton.setText("Clear Fields");
+        ClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(COMButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BaudButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ClearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DisconnectButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(COMButton)
+                    .addComponent(BaudButton)
+                    .addComponent(DisconnectButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ExitButton)
+                    .addComponent(ClearButton)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private String COMPort = "tmr:///COM6";
+    
+    static void usage()
+  {
+    System.out.printf("Usage: demo reader-uri <command> [args]\n" +
+                      "  (URI: 'tmr:///COM1' or 'tmr://astra-2100d3/' " +
+                      "or 'tmr:///dev/ttyS0')\n\n" +
+                      "Available commands:\n");
+    System.exit(1);
+  }
+
+   //setTrace code from read.java provided in samples
+   public static void setTrace(Reader r, String args[])
+  {    
+    if (args[0].toLowerCase().equals("on"))
+    {
+      r.addTransportListener(r.simpleTransportListener);
+    }    
+  }
+   
+   //TagReadListener from read.java provided in samples
+   static class TagReadListener implements ReadListener
+  {
+        public void tagRead(Reader r, TagReadData t) {
+            System.out.println("Tag Read " + t);
+        }
+  }
+    
+    private void WriteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WriteButtonActionPerformed
+        //Declare variable to hold the EPC
+        String EPC;
+        
+        //Get user value from text field and place it in a variable
+        EPC = WriteField.getText();
+    }//GEN-LAST:event_WriteButtonActionPerformed
+
+    private void EPCFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EPCFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EPCFieldActionPerformed
+
+    private void EPCButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EPCButtonActionPerformed
+        
+    }//GEN-LAST:event_EPCButtonActionPerformed
+
+    private void ReservedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservedButtonActionPerformed
+        //Test placing something here when button is pressed
+        ReservedField.setText("this is a test");
+    }//GEN-LAST:event_ReservedButtonActionPerformed
+
+    private void TIDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TIDButtonActionPerformed
+        //Test placing something here when button is pressed
+        TIDField.setText("this is a test");
+    }//GEN-LAST:event_TIDButtonActionPerformed
+
+    private void UserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserButtonActionPerformed
+        //Test placing something here when button is pressed
+        UserField.setText("this is a test");
+    }//GEN-LAST:event_UserButtonActionPerformed
+
+    private void ClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearButtonActionPerformed
+        //Clear all display or entry fields
+        EPCField.setText("");
+        ReservedField.setText("");
+        TIDField.setText("");
+        UserField.setText("");
+        WriteField.setText("");
+    }//GEN-LAST:event_ClearButtonActionPerformed
+
+    private void ReadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReadButtonActionPerformed
+        // Program setup
+        Reader r = null;
+        int nextarg = 0;
+        boolean trace = false;
+        
+        System.out.println(COMPort);
+
+        // Create Reader object, connecting to physical device
+        try
+        { 
+
+          TagReadData[] tagReads;
+
+          r = Reader.create(COMPort);
+          if (trace)
+          {
+            setTrace(r, new String[] {"on"});
+          }
+          r.connect();
+          if (Reader.Region.UNSPEC == (Reader.Region)r.paramGet("/reader/region/id"))
+          {
+              Reader.Region[] supportedRegions = (Reader.Region[])r.paramGet(TMConstants.TMR_PARAM_REGION_SUPPORTEDREGIONS);
+              if (supportedRegions.length < 1)
+              {
+                   throw new Exception("Reader doesn't support any regions");
+          }
+              else
+              {
+                   r.paramSet("/reader/region/id", supportedRegions[0]);
+              }
+          }
+          r.addReadListener(new TagReadListener() );
+          // Read tags
+          tagReads = r.read(500);
+          // Print tag reads
+          for (TagReadData tr : tagReads)
+          {
+              ReservedField.setText(tr.getEPCMemData().toString());
+              EPCField.setText(tr.getEPCMemData().toString());
+              TIDField.setText(tr.getTIDMemData().toString());
+              UserField.setText(tr.getUserMemData().toString());
+          }
+
+          // Shut down reader
+          r.destroy();
+        } 
+        catch (ReaderException re)
+        {
+          System.out.println("Reader Exception : " + re.getMessage());
+        }
+        catch (Exception re)
+        {
+            System.out.println("Exception : " + re.getMessage());
+        }
+    }//GEN-LAST:event_ReadButtonActionPerformed
+
+    private void COMButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COMButtonActionPerformed
+        
+        Reader r = null;
+        int nextarg = 0;
+        boolean trace = false;
+
+        try
+        {
+            r = Reader.create(COMPort);
+            if (trace)
+            {
+                setTrace(r, new String[]{"on"});
+            }
+            r.connect();
+            if (Reader.Region.UNSPEC == (Reader.Region) r.paramGet(TMConstants.TMR_PARAM_REGION_ID))
+            {
+                Reader.Region[] supportedRegions = (Reader.Region[]) r.paramGet(TMConstants.TMR_PARAM_REGION_SUPPORTEDREGIONS);
+                if (supportedRegions.length < 1) {
+                    throw new Exception("Reader doesn't support any regions");
+                } else {
+                    r.paramSet(TMConstants.TMR_PARAM_REGION_ID, supportedRegions[0]);
+                }
+            }
+        
+        try
+            {
+                String reader_uri = (String) r.paramGet(TMConstants.TMR_PARAM_READER_URI);
+                System.out.println("Reader Uri :" + reader_uri);
+                COMPort = reader_uri;
+            } catch (Exception ex) {
+                System.out.println("Reader Uri :" + ex.getMessage());
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_COMButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +464,26 @@ public class RFID_UI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BaudButton;
+    private javax.swing.JButton COMButton;
+    private javax.swing.JButton ClearButton;
+    private javax.swing.JButton DisconnectButton;
+    private javax.swing.JButton EPCButton;
+    private javax.swing.JTextField EPCField;
+    private javax.swing.JButton ExitButton;
+    private javax.swing.JButton ReadButton;
+    private javax.swing.JButton ReservedButton;
+    private javax.swing.JTextField ReservedField;
+    private javax.swing.JButton TIDButton;
+    private javax.swing.JTextField TIDField;
+    private javax.swing.JButton UserButton;
+    private javax.swing.JTextField UserField;
+    private javax.swing.JButton WriteButton;
+    private javax.swing.JTextField WriteField;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
