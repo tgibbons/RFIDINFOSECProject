@@ -266,7 +266,7 @@ public class RFID_UI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private String COMPort = "tmr:///COM6";
+    public String COMPort = "tmr:///COM6";
     
     static void usage()
   {
