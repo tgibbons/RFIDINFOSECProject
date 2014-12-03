@@ -266,16 +266,12 @@ public class RFID_UI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private String COMPort = "tmr:///COM6";
-    
-    static void usage()
-  {
-    System.out.printf("Usage: demo reader-uri <command> [args]\n" +
-                      "  (URI: 'tmr:///COM1' or 'tmr://astra-2100d3/' " +
-                      "or 'tmr:///dev/ttyS0')\n\n" +
-                      "Available commands:\n");
-    System.exit(1);
-  }
+    public static String COMPort = "tmr:///COM6";
+
+    public static String getCOMPort() 
+    {
+        return COMPort;
+    }
 
    //setTrace code from read.java provided in samples
    public static void setTrace(Reader r, String args[])
@@ -311,18 +307,15 @@ public class RFID_UI extends javax.swing.JFrame {
     }//GEN-LAST:event_EPCButtonActionPerformed
 
     private void ReservedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservedButtonActionPerformed
-        //Test placing something here when button is pressed
-        ReservedField.setText("this is a test");
+
     }//GEN-LAST:event_ReservedButtonActionPerformed
 
     private void TIDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TIDButtonActionPerformed
-        //Test placing something here when button is pressed
-        TIDField.setText("this is a test");
+
     }//GEN-LAST:event_TIDButtonActionPerformed
 
     private void UserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserButtonActionPerformed
-        //Test placing something here when button is pressed
-        UserField.setText("this is a test");
+
     }//GEN-LAST:event_UserButtonActionPerformed
 
     private void ClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearButtonActionPerformed
@@ -340,7 +333,8 @@ public class RFID_UI extends javax.swing.JFrame {
         int nextarg = 0;
         boolean trace = false;
         
-        System.out.println(COMPort);
+        //Print out current COMPort
+        System.out.println(getCOMPort());
 
         // Create Reader object, connecting to physical device
         try
@@ -348,7 +342,7 @@ public class RFID_UI extends javax.swing.JFrame {
 
           TagReadData[] tagReads;
 
-          r = Reader.create(COMPort);
+          r = Reader.create(getCOMPort());
           if (trace)
           {
             setTrace(r, new String[] {"on"});
@@ -399,7 +393,7 @@ public class RFID_UI extends javax.swing.JFrame {
 
         try
         {
-            r = Reader.create(COMPort);
+            r = Reader.create(getCOMPort());
             if (trace)
             {
                 setTrace(r, new String[]{"on"});
@@ -419,7 +413,9 @@ public class RFID_UI extends javax.swing.JFrame {
             {
                 String reader_uri = (String) r.paramGet(TMConstants.TMR_PARAM_READER_URI);
                 System.out.println("Reader Uri :" + reader_uri);
+                
                 COMPort = reader_uri;
+            
             } catch (Exception ex) {
                 System.out.println("Reader Uri :" + ex.getMessage());
             }
