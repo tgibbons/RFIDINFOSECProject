@@ -325,8 +325,33 @@ public class RFID_UI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+//Stephen, you wrote this, idk what it's doing..
+    //no connection is ever made to a reader
+    //the for loop goes 12 times, why 12 times?
+    //and each time it checks if a quoted set of text with a variable stuck to it is not null
+    //(the syntax is wrong btw...)
+    //and then it sets 'COMPort' equal to the same text witha variable stuck to it
+    //what was your intention here?
+    // --Travis
+    
+    
+//     int comtest = 0 ;
+//    
+//    // no baud rate and comm detection
+//    
+//    // testing all possible com ports
+//    for (comtest; comtest <12; comtest++)
+//    {
+//        // send signl to comm port, if it responds, then its good
+//        if("trm:///COMport"comtest =! null)
+//        {
+//            COMPort = "trm:///COMport"comtest;
+//            break;
+//        }
+//    }
+    
     //Declare private variables for COM Port a reader
-    private static String COMPort = "tmr:///COM6";
+    private static String COMPort = "tmr:///COM6"; //temporarily initialized at known port
     private static Reader r = null;
     
     //Name: getReader
