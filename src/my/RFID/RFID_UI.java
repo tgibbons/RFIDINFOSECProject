@@ -357,7 +357,7 @@ public class RFID_UI extends javax.swing.JFrame {
     
      
     
-    private void COMDectect(){
+    private void COMDetect(){
         //Loop to check com port validity, 12 was selected arbitrarily, though maximum number of COM PORTS is 256 for Window 6.0+
         for (int comtest = 0; comtest <12; comtest++)
         {
@@ -645,11 +645,11 @@ public class RFID_UI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RFID_UI().setVisible(true);
+                RFID_UI UI = new RFID_UI();
+                UI.setVisible(true);
+                UI.COMDetect();
             }
         });
-        //Error: Non static Method can not be referenced by static context
-        //COMDectect();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
