@@ -334,7 +334,7 @@ public class RFID_UI extends javax.swing.JFrame {
     //what was your intention here?
     // --Travis
     
-    
+
 //     int comtest = 0 ;
 //    
 //    // no baud rate and comm detection
@@ -353,6 +353,34 @@ public class RFID_UI extends javax.swing.JFrame {
     //Declare private variables for COM Port a reader
     private static String COMPort = "tmr:///COM6"; //temporarily initialized at known port
     private static Reader r = null;
+    
+    
+     
+    
+    private void COMDectect(){
+        //Loop to check com port validity, 12 was selected arbitrarily, though maximum number of COM PORTS is 256 for Window 6.0+
+        for (int comtest = 0; comtest <12; comtest++)
+        {
+            try
+            {
+                //Set the reader based on user input
+                setReader(Reader.create("trm:///COMport" + comtest));
+
+                //Connect the reader
+                getReader().connect();
+
+                //Print message indicating a connection
+                System.out.println("Connected to COM" + comtest);
+                COMPort = "trm:///COMport" + comtest;
+                COMField.setText("Connected to COM" + comtest);
+            }
+            catch(Exception notCOM)
+            {
+                System.out.println(comtest + " Incorrect");
+            }
+        }
+    }
+    
     
     //Name: getReader
     //Author: Travis Gibbons
@@ -620,6 +648,8 @@ public class RFID_UI extends javax.swing.JFrame {
                 new RFID_UI().setVisible(true);
             }
         });
+        //Error: Non static Method can not be referenced by static context
+        //COMDectect();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
