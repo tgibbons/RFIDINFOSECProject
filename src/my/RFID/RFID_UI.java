@@ -372,7 +372,8 @@ public class RFID_UI extends javax.swing.JFrame {
                 System.out.println("Trying COM" + comtest);
                 
                 //Creates the test reader
-                setReader(Reader.create("trm:///COMport" + comtest));
+                System.out.println("trm:///COM" + comtest);
+                setReader(Reader.create("trm:///COM" + comtest));
                 System.out.println("COM" + comtest);
 
                 //Connect the reader
@@ -384,7 +385,7 @@ public class RFID_UI extends javax.swing.JFrame {
                 
                 //Print message indicating a connection
                 System.out.println("Connected to COM" + comtest);
-                COMPort = "trm:///COMport" + comtest;
+                COMPort = "trm:///COM" + comtest;
                 COMField.setText("Connected to COM" + comtest);
                 getReader().destroy();
                 break;
