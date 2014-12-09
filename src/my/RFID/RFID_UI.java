@@ -353,10 +353,15 @@ public class RFID_UI extends javax.swing.JFrame {
     //Declare private variables for COM Port a reader
     private static String COMPort = "tmr:///COM6"; //temporarily initialized at known port
     private static Reader r = null;
+    private StatusListener sl;
     
     
      
-    
+    //Name: COMDetect
+    //Author: Phillip Schoeman
+    //Parameters: none
+    //Purpose: Detects the COM port the reader is running on
+    //Returns: none
     private void COMDetect(){
         //Loop to check com port validity, 12 was selected arbitrarily, though maximum number of COM PORTS is 256 for Window 6.0+
         for (int comtest = 0; comtest <12; comtest++)
@@ -364,15 +369,24 @@ public class RFID_UI extends javax.swing.JFrame {
             try
             {
                 //Set the reader based on user input
+                System.out.println("Trying COM" + comtest);
+                
                 setReader(Reader.create("trm:///COMport" + comtest));
+                System.out.println("COM" + comtest);
 
                 //Connect the reader
+                getReader().addStatusListener(sl);
+                System.out.println("COM" + comtest + " Status Listener Attached");
+                System.out.println(sl.toString());
                 getReader().connect();
 
+                
                 //Print message indicating a connection
                 System.out.println("Connected to COM" + comtest);
                 COMPort = "trm:///COMport" + comtest;
                 COMField.setText("Connected to COM" + comtest);
+                getReader().destroy();
+                break;
             }
             catch(Exception notCOM)
             {
