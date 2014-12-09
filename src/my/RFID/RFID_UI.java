@@ -371,6 +371,7 @@ public class RFID_UI extends javax.swing.JFrame {
                 //Set the reader based on user input
                 System.out.println("Trying COM" + comtest);
                 
+                //Creates the test reader
                 setReader(Reader.create("trm:///COMport" + comtest));
                 System.out.println("COM" + comtest);
 
