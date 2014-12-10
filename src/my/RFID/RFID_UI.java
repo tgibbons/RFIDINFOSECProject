@@ -394,6 +394,7 @@ public class RFID_UI extends javax.swing.JFrame {
             {
                 System.out.println(comtest + " Incorrect");
                 System.out.println("Error: " + notCOM.toString());
+                getReader().destroy();
             }
         }
     }
